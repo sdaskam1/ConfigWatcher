@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-service
+  labels:
+    app: demo-service
+  namespace: namespace1
+spec:
+  serviceAccountName: default
+  containers:
+  - name: demo-service
+    image: demo-service:latest
+    imagePullPolicy: Never
+    ports:
+    - containerPort: 8080
